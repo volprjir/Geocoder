@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3>Result</h3>
+{% for table in tables %}
+{{ table|safe }}
+{% endfor %}
+    <div class="buttons">
+        {% include btn ignore missing %}
+        <a href={{url_for("clear_temp")}} class="btn btn-danger my-buttons">Load another CSV</a>
+        <a href={{url_for("show_map")}} class="btn btn-info my-buttons">Show on map</a>
+    </div>
+
+
+
+{% endblock %}
